@@ -9,10 +9,10 @@
     ];
 
     const FOOTER_LINKS = [
-        { href: 'index.html', label: 'Home', page: 'home' },
+        { href: '/', label: 'Home', page: 'home' },
         { href: 'signup.html', label: 'Contact us about a pilot', page: 'signup' },
         { href: 'admin/', label: 'Admin web', page: 'admin' },
-        { href: 'index.html#offer', label: 'What we offer', page: '' },
+        { href: '/#offer', label: 'What we offer', page: '' },
         { href: 'compliance.html', label: 'Compliance', page: 'compliance' },
         { href: 'privacy.html', label: 'Privacy Policy', page: 'privacy' },
         { href: 'terms.html', label: 'Terms of Service', page: 'terms' },
@@ -38,11 +38,11 @@
     }
 
     function sectionHref(sectionId, page) {
-        return isHomePage(page) ? `#${sectionId}` : `index.html#${sectionId}`;
+        return isHomePage(page) ? `#${sectionId}` : `/#${sectionId}`;
     }
 
     function renderFullHeader(page) {
-        const logoHref = isHomePage(page) ? '#' : 'index.html';
+        const logoHref = isHomePage(page) ? '#' : '/';
         const sectionItems = NAV_SECTIONS.map(
             (section) =>
                 `<li><a href="${sectionHref(section.id, page)}">${section.label}</a></li>`,
@@ -75,14 +75,14 @@
         return `
 <nav class="navbar" aria-label="Site">
     <div class="nav-container">
-        ${renderLogo('index.html')}
+        ${renderLogo('/')}
         <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="${CTA_HREF}" class="nav-cta">Register</a></li>
         </ul>
     </div>
