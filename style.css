@@ -2366,8 +2366,7 @@ body.nav-open::before {
 
     /* Do not retarget .hero-slide or .feature-shot-extra imgs — absolute/clipped layout */
     .feature-phone-shot img,
-    .team-photo,
-    .store-badge img {
+    .team-photo {
         max-width: 100%;
         height: auto;
     }
@@ -2920,9 +2919,11 @@ body.nav-open::before {
 }
 
 .store-badge {
-    display: inline-block;
-    flex: 0 1 auto;
-    width: min(135px, 42vw);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 135px;
     height: 40px;
     padding: 0;
     margin: 0;
@@ -2944,17 +2945,17 @@ body.nav-open::before {
 
 .store-badge img {
     display: block;
-    width: 100% !important;
+    width: 135px !important;
     height: 40px !important;
-    max-width: 135px;
+    max-width: none;
     object-fit: contain;
     object-position: center;
 }
 
 .store-badge.play img {
-    width: 100% !important;
+    width: 135px !important;
     height: 40px !important;
-    max-width: 135px;
+    max-width: none;
     margin: 0;
 }
 
