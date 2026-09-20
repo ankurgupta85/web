@@ -31,6 +31,7 @@
   "email": "hello@dailydotkids.ca",
   "telephone": "+1-236-862-1951",
   "foundingDate": "2021",
+  "description": "Daycare management software for licensed childcare centres in Canada and the USA. Admin, Teacher, and Parent apps with production data stored in Canada for now.",
   "areaServed": [
     { "@type": "Country", "name": "Canada" },
     { "@type": "Country", "name": "United States" }
@@ -40,7 +41,46 @@
     "addressLocality": "Langley",
     "addressRegion": "BC",
     "addressCountry": "CA"
-  }
+  },
+  "sameAs": [
+    "https://apps.apple.com/ca/app/dailydotkids-admin/id6778867318",
+    "https://play.google.com/store/apps/details?id=com.anthor.dailydot.admin"
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DailyDotKids",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "iOS, Android",
+  "url": "https://dailydotkids.ca/",
+  "description": "Daycare management platform for licensed centres — attendance, classroom activities, parent communication, staff clock-in, credentials vault, and licensing visit record exports.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CAD",
+    "description": "Free plan available in the Admin app with capacity limits; Paid plans available by contact."
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Anthor Canada corp",
+    "url": "https://dailydotkids.ca/"
+  },
+  "featureList": [
+    "Teacher attendance and classroom activity logging",
+    "Parent app updates and invitations",
+    "Staff clock-in on personal or shared devices",
+    "Credentials vault and expiry reminders",
+    "Licensing visit checklist and export",
+    "Free plan for small licensed centres"
+  ],
+  "areaServed": ["CA", "US"],
+  "downloadUrl": [
+    "https://apps.apple.com/ca/app/dailydotkids-admin/id6778867318",
+    "https://play.google.com/store/apps/details?id=com.anthor.dailydot.admin"
+  ]
 }
     </script>
     <script type="application/ld+json">
@@ -48,6 +88,14 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is DailyDotKids?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DailyDotKids is daycare management software for licensed childcare centres in Canada and the USA, with Admin, Teacher, and Parent apps. Production centre data is stored in Canada for now."
+      }
+    },
     {
       "@type": "Question",
       "name": "How do I get started on Free?",
@@ -66,6 +114,14 @@
     },
     {
       "@type": "Question",
+      "name": "Does DailyDotKids help with licensing visits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Paid plans you can prepare licensing visit checklists, record past visits, and export attendance, staff hours, and emergency-contact summaries. DailyDotKids does not certify compliance."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Where do I download the apps?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -77,7 +133,7 @@
     </script>
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="style.css?v=20260910p">
+    <link rel="stylesheet" href="style.css?v=20260919s">
     <script>
       /* Preserve old deep links that moved off the homepage */
       (function () {
@@ -128,7 +184,7 @@
         <div class="hero-inner">
             <div class="hero-content">
                 <p class="hero-kicker freemium-kicker">Free for licensed centres · Canada &amp; USA</p>
-                <h1>Start free today. Invite your team this afternoon.</h1>
+                <h1>Daycare software for licensed centres — start free today</h1>
                 <p>Owners install the <strong>Admin</strong> app and tap <strong>Start on Free</strong> — no credit card, no sales call. Teachers and parents join with your invitation code. Production centre data is stored in our <strong>Canada</strong> cloud region for now.</p>
                 <p class="hero-store-label">Get the Admin app</p>
                 <div class="hero-stores" aria-label="Download DailyDotKids Admin">
@@ -314,6 +370,10 @@
             </div>
             <div class="faq-list">
                 <details open>
+                    <summary>What is DailyDotKids?</summary>
+                    <p>Daycare management software for licensed centres in Canada and the USA — Admin, Teacher, and Parent apps for attendance, classroom logs, parent updates, and staff records.</p>
+                </details>
+                <details>
                     <summary>How do I start on Free?</summary>
                     <p>Open the <a href="apps.html#admin-app">Admin app</a> and tap <strong>Start on Free</strong>. Teachers and parents join with invitation codes you send.</p>
                 </details>
@@ -326,7 +386,7 @@
                     <p>On this page under <a href="#platform">Download</a>, and on the dedicated <a href="apps.html">Apps page</a>.</p>
                 </details>
             </div>
-            <p class="section-more"><a href="product.html#faq">More questions →</a></p>
+            <p class="section-more"><a href="faq.html">Full FAQ →</a></p>
         </section>
 
     </main>
@@ -344,6 +404,7 @@
     </section>
 
     <footer class="footer">
+        <p class="footer-tagline">DailyDotKids is daycare management software for licensed centres in Canada and the USA. Data hosted in Canada for now.</p>
         <p class="footer-brand">Anthor Canada corp · Langley, British Columbia</p>
         <p class="footer-contact">
             <a href="tel:+12368621951">+1 236-862-1951</a>
@@ -361,6 +422,8 @@
             <a href="product.html">Product</a>
             <span>|</span>
             <a href="about.html">About</a>
+            <span>|</span>
+            <a href="faq.html">FAQ</a>
             <span>|</span>
             <a href="signup.html">Contact</a>
             <span>|</span>
@@ -402,6 +465,6 @@
     </div>
 
     <script src="inquiry.js?v=20260910p"></script>
-    <script src="script.js?v=20260910p"></script>
+    <script src="script.js?v=20260919s"></script>
 </body>
 </html>

@@ -10,6 +10,7 @@
 
     const FOOTER_LINKS = [
         { href: '/', label: 'Home', page: 'home' },
+        { href: 'faq.html', label: 'FAQ', page: 'faq' },
         { href: 'signup.html', label: 'Contact us about a pilot', page: 'signup' },
         { href: 'admin/', label: 'Admin web', page: 'admin' },
         { href: '/#offer', label: 'What we offer', page: '' },
@@ -97,6 +98,7 @@
 
         return `
 <footer class="footer">
+    <p class="footer-tagline">DailyDotKids is daycare management software for licensed centres in Canada and the USA. Data hosted in Canada for now.</p>
     <p>&copy; 2026 Anthor Canada corp. All rights reserved. Built for the future of early childhood education.</p>
     <p class="footer-links">
         ${linkItems}

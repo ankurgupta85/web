@@ -1876,6 +1876,18 @@ body.nav-open::before {
     margin-bottom: 80px;
 }
 
+.footer-tagline {
+    max-width: 42rem;
+    margin: 0 auto 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--gray, #667);
+}
+
+.audience-section {
+    margin-bottom: 80px;
+}
+
 .signup-section {
     background: var(--light);
     border: 1px solid #e1e4e6;
