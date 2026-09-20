@@ -1888,6 +1888,125 @@ body.nav-open::before {
     margin-bottom: 80px;
 }
 
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
+    justify-content: center;
+    margin: 0 0 1rem;
+    font-size: 0.85rem;
+    color: var(--gray, #667);
+}
+
+.breadcrumbs a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.footer-guides {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.resources-section {
+    margin-bottom: 80px;
+}
+
+.resources-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.resources-list a {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text, #1a1a1a);
+    border-bottom: 1px solid transparent;
+}
+
+.resources-list a:hover {
+    border-bottom-color: currentColor;
+}
+
+.compare-disclaimer {
+    max-width: 40rem;
+    margin: 1rem auto 0;
+    font-size: 0.9rem;
+    color: var(--gray, #667);
+}
+
+.compare-table-wrap {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.compare-table th,
+.compare-table td {
+    border: 1px solid #e1e4e6;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.compare-table thead th {
+    background: var(--light, #f6f7f8);
+    font-weight: 700;
+}
+
+.compare-table thead th:nth-child(2),
+.compare-table tbody td:first-of-type {
+    background: color-mix(in srgb, var(--primary, #e24b52) 8%, white);
+    font-weight: 600;
+}
+
+.compare-table thead th:nth-child(2) {
+    color: var(--primary, #e24b52);
+}
+
+.compare-table tbody th {
+    font-weight: 600;
+    width: 22%;
+}
+
+.compare-table tbody td:last-child {
+    color: #4a5560;
+    font-weight: 400;
+}
+
+.guide-cta {
+    margin-top: 2rem;
+}
+
+.day-in-life {
+    margin-bottom: 80px;
+}
+
+.cta-capacity {
+    max-width: 36rem;
+    margin: 0 auto 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: var(--gray, #667);
+}
+
+.final-cta .hero-stores {
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+
+
 .signup-section {
     background: var(--light);
     border: 1px solid #e1e4e6;

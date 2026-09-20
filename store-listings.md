@@ -45,13 +45,13 @@ Start on Free in the Admin app — no credit card. Run your centre, invite teach
 **Keywords** (≤100 chars)
 
 ```
-daycare,childcare,ECE,preschool,admin,freemium,attendance,billing,compliance,Canada,licensed
+daycare,childcare,ECE,preschool,admin,freemium,attendance,billing,compliance,Canada,USA,licensed
 ```
 
 **Description**
 
 ```
-DailyDotKids Admin is the control centre for licensed childcare centres across Canada. Start on our Free plan in the app — no credit card, no sales call required.
+DailyDotKids Admin is the control centre for licensed childcare centres in Canada and the USA. Start on our Free plan in the app — no credit card, no sales call required.
 
 START ON FREE
 • Tap Start on Free, enter your centre details, and log in with your email and password
@@ -79,8 +79,8 @@ Need more capacity or compliance tools? Contact us for Paid:
 PILOT PROGRAM
 Want a structured evaluation with onboarding support? Email hello@dailydotkids.ca or visit dailydotkids.ca/signup.html.
 
-BUILT FOR CANADIAN CENTRES
-DailyDotKids is software for licensed child care centres in every province and territory. We help you keep records and communicate with families — we do not certify your licence or take parent payments.
+BUILT FOR CANADA AND THE USA
+DailyDotKids is software for licensed child care centres in Canada and the United States. Production centre data is stored in Canada for now. We help you keep records and communicate with families — we do not certify your licence or take parent payments.
 
 Compare plans: dailydotkids.ca/pricing.html
 Privacy: dailydotkids.ca/privacy.html
@@ -120,13 +120,13 @@ Teachers at DailyDotKids centres log check-in, meals, naps, photos, and notes �
 **Keywords**
 
 ```
-teacher,ECE,daycare,childcare,preschool,attendance,classroom,dailyreport,Canada,clockin
+teacher,ECE,daycare,childcare,preschool,attendance,classroom,dailyreport,Canada,USA,clockin
 ```
 
 **Description**
 
 ```
-DailyDotKids Teacher is the classroom app for educators at licensed childcare centres across Canada.
+DailyDotKids Teacher is the classroom app for educators at licensed childcare centres in Canada and the USA.
 
 YOUR CENTRE INVITES YOU
 Download the app, then sign in with the invitation code from your centre owner or admin. If your centre is new to DailyDotKids, the owner can start on our Free plan in the Admin app — no credit card required.
@@ -184,13 +184,13 @@ Get photos, daily reports, and centre bulletins on your phone. Your childcare ce
 **Keywords**
 
 ```
-parent,daycare,childcare,preschool,dailyreport,photos,bulletin,Canada,family,updates
+parent,daycare,childcare,preschool,dailyreport,photos,bulletin,Canada,USA,family,updates
 ```
 
 **Description**
 
 ```
-DailyDotKids Parent keeps families connected to licensed childcare centres across Canada.
+DailyDotKids Parent keeps families connected to licensed childcare centres in Canada and the USA.
 
 YOUR CENTRE INVITES YOU
 Your daycare owner or admin sends an invitation code. Download the app, sign in, and see your child's day — no separate website signup required.

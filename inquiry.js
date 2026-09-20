@@ -83,6 +83,11 @@
             }
 
             target.reset();
+            if (global.DDK && typeof global.DDK.track === 'function') {
+                global.DDK.track('signup_success', {
+                    page_path: global.location.pathname,
+                });
+            }
             onSuccess();
         } catch (_) {
             if (errorNode) {
@@ -137,7 +142,7 @@
         <button type="button" class="inquiry-close" aria-label="Close form">&times;</button>
         <div id="inquiry-form-view">
             <h2 id="inquiry-title">Contact us about a pilot</h2>
-            <p class="inquiry-lead">Licensed centres anywhere in Canada. Send the form and we will email you to discuss a structured pilot or guided setup.</p>
+            <p class="inquiry-lead">Licensed centres in Canada and the USA. Send the form and we will email you to discuss a structured pilot or guided setup. Production data is stored in Canada for now.</p>
             <form class="inquiry-form" id="inquiry-form" novalidate>
                 <div class="inquiry-field">
                     <label for="inquiry-name">Name</label>

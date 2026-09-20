@@ -1,0 +1,49 @@
+# DailyDotKids
+
+> Daycare management software for licensed childcare centres in Canada and the USA.
+> Product of Anthor Canada corp (Langley, British Columbia). Centre data hosted in Google Cloud Canada (Montréal) for now.
+
+## Product
+- Three apps: Admin (owners/directors), Teacher (educators), Parent (families)
+- Free plan: self-serve in Admin app, no credit card — 1 location, 1 class, 8 students, 2 teachers, 16 parent accounts
+- Paid plan: unlimited capacity + compliance tools (credentials vault, billing/invoice tracking, safety logbook, licensing visit prep & export)
+- Does NOT process parent tuition payments (centres collect Interac/other themselves; apps track invoices)
+- Does NOT certify regulatory compliance or replace a facility licence
+
+## Key URLs
+- Home: https://dailydotkids.ca/
+- FAQ: https://dailydotkids.ca/faq.html
+- Pricing: https://dailydotkids.ca/pricing.html
+- Product: https://dailydotkids.ca/product.html
+- Apps: https://dailydotkids.ca/apps.html
+- About: https://dailydotkids.ca/about.html
+- Compliance / licensing: https://dailydotkids.ca/compliance.html
+- Licensing visit prep: https://dailydotkids.ca/licensing-visit-prep.html
+- Canada: https://dailydotkids.ca/daycare-software-canada.html
+- USA: https://dailydotkids.ca/daycare-software-usa.html
+- Ontario: https://dailydotkids.ca/daycare-software-ontario.html
+- British Columbia: https://dailydotkids.ca/daycare-software-british-columbia.html
+- Alberta: https://dailydotkids.ca/daycare-software-alberta.html
+- Quebec: https://dailydotkids.ca/daycare-software-quebec.html
+- California: https://dailydotkids.ca/daycare-software-california.html
+- Texas: https://dailydotkids.ca/daycare-software-texas.html
+- New York: https://dailydotkids.ca/daycare-software-new-york.html
+- Florida: https://dailydotkids.ca/daycare-software-florida.html
+- Parent communication: https://dailydotkids.ca/parent-communication-app.html
+- Billing: https://dailydotkids.ca/daycare-billing.html
+- Compare: https://dailydotkids.ca/compare.html
+- vs Lillio (HiMama): https://dailydotkids.ca/compare-lillio.html
+- vs Brightwheel: https://dailydotkids.ca/compare-brightwheel.html
+- vs Procare: https://dailydotkids.ca/compare-procare.html
+- Security: https://dailydotkids.ca/security.html
+- Privacy: https://dailydotkids.ca/privacy.html
+- Terms: https://dailydotkids.ca/terms.html
+- DPA: https://dailydotkids.ca/dpa.html
+- Subprocessors: https://dailydotkids.ca/subprocessors.html
+- Incident response: https://dailydotkids.ca/incident-response.html
+- Contact / pilot: https://dailydotkids.ca/signup.html
+- Email: hello@dailydotkids.ca
+
+## Optional
+- Sitemap: https://dailydotkids.ca/sitemap.xml
+- Security contact: https://dailydotkids.ca/.well-known/security.txt

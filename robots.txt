@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /legal-drafts/
+Disallow: /store-listings.md
+Disallow: /ADMIN-WEB.md
 
 Sitemap: https://dailydotkids.ca/sitemap.xml
+# Product summary for AI crawlers: https://dailydotkids.ca/llms.txt
+# Security: https://dailydotkids.ca/.well-known/security.txt
