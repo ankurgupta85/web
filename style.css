@@ -3163,7 +3163,7 @@ body[data-page="home"] .faq-compact .faq-list {
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
-    width: 135px;
+    width: auto;
     height: 40px;
     padding: 0;
     margin: 0;
@@ -3172,7 +3172,7 @@ body[data-page="home"] .faq-compact .faq-list {
     background: none;
     box-shadow: none;
     line-height: 0;
-    overflow: hidden;
+    overflow: visible;
     text-decoration: none;
     transition: opacity 0.2s ease;
 }
@@ -3185,7 +3185,7 @@ body[data-page="home"] .faq-compact .faq-list {
 
 .store-badge img {
     display: block;
-    width: 135px !important;
+    width: auto !important;
     height: 40px !important;
     max-width: none;
     object-fit: contain;
@@ -3193,10 +3193,19 @@ body[data-page="home"] .faq-compact .faq-list {
 }
 
 .store-badge.play img {
-    width: 135px !important;
+    /* Play artwork is slightly wider at the same height; keep height locked. */
+    width: auto !important;
     height: 40px !important;
     max-width: none;
     margin: 0;
+}
+
+.store-badge.large {
+    height: 48px;
+}
+
+.store-badge.large img {
+    height: 48px !important;
 }
 
 .store-badge:hover {
