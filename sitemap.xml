@@ -116,7 +116,13 @@
   </url>
   <url>
     <loc>https://dailydotkids.ca/compare.html</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://dailydotkids.ca/compare-paper.html</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>

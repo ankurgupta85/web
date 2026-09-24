@@ -1,2 +1,6 @@
 admin-portal/
 legal-drafts/
+
+# Local print only — never publish to dailydotkids.ca
+flyer.html
+flyer-qr.png

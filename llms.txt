@@ -32,6 +32,7 @@
 - Parent communication: https://dailydotkids.ca/parent-communication-app.html
 - Billing: https://dailydotkids.ca/daycare-billing.html
 - Compare: https://dailydotkids.ca/compare.html
+- vs paper / clipboards: https://dailydotkids.ca/compare-paper.html
 - vs Lillio (HiMama): https://dailydotkids.ca/compare-lillio.html
 - vs Brightwheel: https://dailydotkids.ca/compare-brightwheel.html
 - vs Procare: https://dailydotkids.ca/compare-procare.html
