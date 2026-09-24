@@ -154,6 +154,62 @@ body.nav-open::before {
     color: var(--primary);
 }
 
+.nav-item-has-children {
+    position: relative;
+}
+
+.nav-item-has-children > .nav-parent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.nav-item-has-children > .nav-parent::after {
+    content: "";
+    width: 0.35rem;
+    height: 0.35rem;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-1px);
+    opacity: 0.7;
+}
+
+.nav-submenu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 14.5rem;
+    margin: 0;
+    padding: 0.5rem 0;
+    list-style: none;
+    background: var(--white);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+    z-index: 1002;
+}
+
+.nav-item-has-children:hover > .nav-submenu,
+.nav-item-has-children:focus-within > .nav-submenu,
+.nav-item-has-children.is-open > .nav-submenu {
+    display: block;
+}
+
+.nav-submenu a {
+    display: block;
+    padding: 0.55rem 1rem;
+    font-size: 0.92rem;
+    white-space: nowrap;
+}
+
+.nav-submenu a:hover,
+.nav-submenu a.active {
+    background: rgba(226, 75, 82, 0.08);
+    color: var(--primary);
+}
+
 .nav-links .nav-cta {
     background-color: var(--primary);
     color: var(--white);
@@ -2808,6 +2864,103 @@ body.nav-open::before {
     background: var(--primary);
 }
 
+.owner-path {
+    position: sticky;
+    top: 68px;
+    z-index: 40;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem 0.65rem;
+    width: 100%;
+    margin: 0;
+    padding: 0.7rem 16px;
+    background: rgba(247, 249, 251, 0.96);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(8px);
+}
+
+.owner-path a {
+    font-size: 0.9rem;
+    font-weight: 650;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    transition: var(--transition);
+}
+
+.owner-path a:hover {
+    color: var(--primary);
+    border-color: rgba(226, 75, 82, 0.45);
+}
+
+.owner-path .owner-path-cta {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.owner-path .owner-path-cta:hover {
+    background: var(--primary-deep);
+    color: var(--white);
+    border-color: var(--primary-deep);
+}
+
+/* Homepage owner scan path — tighter sections */
+body[data-page="home"] .container {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+body[data-page="home"] .container section[id] {
+    scroll-margin-top: 140px;
+}
+
+body[data-page="home"] .container > section + section {
+    margin-top: 2.75rem;
+    padding-top: 0.25rem;
+}
+
+body[data-page="home"] .offer-compact .section-header,
+body[data-page="home"] .pilot-compact .section-header,
+body[data-page="home"] .faq-compact .section-header,
+body[data-page="home"] .compliance-section .section-header {
+    margin-bottom: 1.5rem;
+}
+
+body[data-page="home"] .offer-compact .section-header p,
+body[data-page="home"] .compliance-section .section-header p {
+    margin-top: 0.35rem;
+}
+
+body[data-page="home"] .freemium-strip {
+    margin: 0.5rem auto;
+    padding: 0;
+    max-width: none;
+}
+
+body[data-page="home"] .faq-compact .faq-list {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .owner-path {
+        top: 60px;
+        gap: 0.35rem 0.4rem;
+        padding: 0.55rem 12px;
+    }
+
+    .owner-path a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.5rem;
+    }
+}
+
 .step-grid {
     list-style: none;
     display: grid;
@@ -3404,6 +3557,35 @@ body.nav-open::before {
 
     .nav-links.open {
         transform: translateX(0);
+    }
+
+    .nav-item-has-children {
+        width: 100%;
+    }
+
+    .nav-submenu {
+        position: static;
+        transform: none;
+        display: none;
+        min-width: 0;
+        width: 100%;
+        margin: 0.35rem 0 0;
+        padding: 0.25rem 0 0.25rem 0.75rem;
+        border: none;
+        border-left: 2px solid rgba(226, 75, 82, 0.35);
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .nav-item-has-children.is-open > .nav-submenu,
+    .nav-item-has-children.is-active > .nav-submenu {
+        display: block;
+    }
+
+    .nav-submenu a {
+        padding: 0.45rem 0.25rem;
+        white-space: normal;
     }
 
     .nav-links .nav-cta {

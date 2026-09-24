@@ -41,7 +41,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260920d">
+    <link rel="stylesheet" href="style.css?v=20260924a">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -56,13 +56,21 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="pricing.html">Free plan</a></li>
-                <li><a href="apps.html">Get the apps</a></li>
                 <li><a href="product.html">Product</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="apps.html">Apps</a></li>
+                <li class="nav-item-has-children">
+                    <a href="compare.html" class="nav-parent">Compare</a>
+                    <ul class="nav-submenu" aria-label="Comparisons">
+                        <li><a href="compare-paper.html">vs paper &amp; clipboards</a></li>
+                        <li><a href="compare-lillio.html">vs Lillio</a></li>
+                        <li><a href="compare-brightwheel.html">vs Brightwheel</a></li>
+                        <li><a href="compare-procare.html">vs Procare</a></li>
+                        <li><a href="compare.html">All comparisons</a></li>
+                    </ul>
+                </li>
                 <li><a href="compliance.html">Compliance</a></li>
                 <li><a href="faq.html">FAQ</a></li>
-                <li><a href="security.html">Security</a></li>
                 <li><a href="apps.html#admin-app" class="nav-cta">Start free</a></li>
             </ul>
         </div>
@@ -85,7 +93,7 @@
 
             <h2>Plans: Free and Paid</h2>
             <ul class="benefit-list">
-                <li><strong>Free plan:</strong> Self-serve in the Admin app or through our guided signup form. No credit card required. Capacity limits apply — see <a href="pricing.html">Plans</a>.</li>
+                <li><strong>Free plan:</strong> Self-serve in the Admin app or through our guided signup form. No credit card required. Capacity limits apply — see <a href="pricing.html">Pricing</a>.</li>
                 <li><strong>Paid plan:</strong> Unlimited capacity and compliance tools (billing, vault, safety logbook, policy library). Pricing is agreed with us before billing begins; a separate order form or invoice may apply for Paid subscriptions.</li>
             </ul>
             <p>We may change plan limits or features with reasonable notice. We will not charge your centre without prior agreement on Paid pricing.</p>
@@ -124,7 +132,7 @@
             <p>These terms are governed by the laws of British Columbia and the federal laws of Canada applicable therein. Disputes are subject to the courts of British Columbia.</p>
 
             <h2>Contact</h2>
-            <p>Questions: <a href="mailto:hello@dailydotkids.ca" class="inquiry-ignore">hello@dailydotkids.ca</a>. See also our <a href="privacy.html">Privacy Policy</a> and <a href="pricing.html">Plans</a>.</p>
+            <p>Questions: <a href="mailto:hello@dailydotkids.ca" class="inquiry-ignore">hello@dailydotkids.ca</a>. See also our <a href="privacy.html">Privacy Policy</a> and <a href="pricing.html">Pricing</a>.</p>
         </div>
     </main>
 
@@ -139,6 +147,10 @@
         </p>
         <p>&copy; 2026 Anthor Canada corp. All rights reserved.</p>
         <p class="footer-links footer-guides">
+            <a href="compare-paper.html">vs paper</a>
+            <span>|</span>
+            <a href="compare.html">Compare</a>
+            <span>|</span>
             <a href="daycare-software-canada.html">Canada</a>
             <span>|</span>
             <a href="daycare-software-usa.html">USA</a>
@@ -149,14 +161,12 @@
             <span>|</span>
             <a href="daycare-billing.html">Billing</a>
             <span>|</span>
-            <a href="compare.html">Compare</a>
-            <span>|</span>
             <a href="llms.txt">llms.txt</a>
         </p>
         <p class="footer-links">
             <a href="/">Home</a>
             <span>|</span>
-            <a href="pricing.html">Plans</a>
+            <a href="pricing.html">Pricing</a>
             <span>|</span>
             <a href="apps.html">Apps</a>
             <span>|</span>
@@ -180,6 +190,7 @@
 
     <script src="inquiry.js?v=20260920a"></script>
     <script src="script.js?v=20260919s"></script>
+    <script src="site-nav.js?v=20260924a"></script>
     <script src="analytics.js?v=20260920a"></script>
 </body>
 </html>

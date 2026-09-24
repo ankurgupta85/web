@@ -166,7 +166,7 @@
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="style.css?v=20260920d">
+    <link rel="stylesheet" href="style.css?v=20260924c">
     <script>
       /* Preserve old deep links that moved off the homepage */
       (function () {
@@ -183,7 +183,7 @@
     </script>
 </head>
 <body data-page="home">
-    <a class="skip-link" href="#offer">Skip to what we offer</a>
+    <a class="skip-link" href="#product">Skip to product overview</a>
 
     <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <symbol id="icon-apple" viewBox="0 0 24 24">
@@ -201,13 +201,21 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="pricing.html">Free plan</a></li>
-                <li><a href="apps.html">Get the apps</a></li>
                 <li><a href="product.html">Product</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="apps.html">Apps</a></li>
+                <li class="nav-item-has-children">
+                    <a href="compare.html" class="nav-parent">Compare</a>
+                    <ul class="nav-submenu" aria-label="Comparisons">
+                        <li><a href="compare-paper.html">vs paper &amp; clipboards</a></li>
+                        <li><a href="compare-lillio.html">vs Lillio</a></li>
+                        <li><a href="compare-brightwheel.html">vs Brightwheel</a></li>
+                        <li><a href="compare-procare.html">vs Procare</a></li>
+                        <li><a href="compare.html">All comparisons</a></li>
+                    </ul>
+                </li>
                 <li><a href="compliance.html">Compliance</a></li>
                 <li><a href="faq.html">FAQ</a></li>
-                <li><a href="security.html">Security</a></li>
                 <li><a href="apps.html#admin-app" class="nav-cta">Start free</a></li>
             </ul>
         </div>
@@ -225,7 +233,7 @@
                     <a class="store-badge apple" href="https://apps.apple.com/ca/app/dailydotkids-admin/id6778867318" target="_blank" rel="noopener noreferrer"><img src="badges/app-store.svg" alt="Download on the App Store" width="135" height="40"></a>
                     <a class="store-badge play" href="https://play.google.com/store/apps/details?id=com.anthor.dailydot.admin" target="_blank" rel="noopener noreferrer"><img src="badges/google-play.png" alt="Get it on Google Play" width="135" height="40"></a>
                 </div>
-                <p class="hero-store-hint">Watch <strong>Start on Free</strong> in the phone demo → · <a href="signup.html">Contact us about a pilot</a> · <a href="pricing.html">Free vs Paid</a></p>
+                <p class="hero-store-hint"><a href="#product">Scan the product</a> · <a href="pricing.html">Free vs Paid</a> · <a href="signup.html">Pilot contact</a></p>
             </div>
             <div class="hero-visual">
                 <div class="hero-demo">
@@ -270,209 +278,160 @@
         </ul>
     </div>
 
+    <nav class="owner-path" aria-label="Quick path for owners">
+        <a href="#product">Product</a>
+        <a href="#offer">What you get</a>
+        <a href="#compare">Compare</a>
+        <a href="#compliance">Compliance</a>
+        <a href="#faq">FAQ</a>
+        <a href="apps.html#admin-app" class="owner-path-cta">Start free</a>
+    </nav>
+
     <main id="main-content" class="container">
 
-        <section class="freemium-strip" aria-label="Free plan highlights">
+        <section id="product" class="offer-section offer-compact">
+            <div class="section-header">
+                <span class="badge">The product</span>
+                <h2>Three apps. One centre.</h2>
+                <p>Owners run Admin. Teachers log the day. Parents see updates. That is the whole product.</p>
+            </div>
+            <div class="offer-grid offer-grid-3">
+                <article class="offer-card">
+                    <h3>Admin</h3>
+                    <p>Locations, classes, roster, invites, waitlist, shared tablet. Start Free here.</p>
+                </article>
+                <article class="offer-card">
+                    <h3>Teacher</h3>
+                    <p>Clock-in, check-in/out, meals, naps, photos, notes — phone or classroom tablet.</p>
+                </article>
+                <article class="offer-card">
+                    <h3>Parent</h3>
+                    <p>Activity feed, bulletins, and push updates instead of endless group chats.</p>
+                </article>
+            </div>
+            <p class="section-more"><a href="product.html">Full product tour →</a> · <a href="apps.html">All store links →</a></p>
+        </section>
+
+        <section id="offer" class="freemium-strip" aria-label="What we offer">
             <div class="freemium-strip-inner">
                 <div>
-                    <p class="freemium-price">$0 forever</p>
-                    <h2>Free plan — built to try without risk</h2>
+                    <p class="freemium-price">$0 forever on Free</p>
+                    <h2>What you get — clear limits, no sales call</h2>
                     <p>1 location · 1 class · up to 8 students · 2 teachers · 16 parent accounts · 60 photos/month</p>
                 </div>
                 <ul class="freemium-checks">
-                    <li>Daily activities, reports &amp; bulletins</li>
-                    <li>Teacher clock-in &amp; Parent app</li>
-                    <li>Waitlist &amp; shared classroom tablet</li>
+                    <li>Classroom day + Parent app</li>
+                    <li>Waitlist → enroll</li>
+                    <li>Paid: vault, invoices, licensing export</li>
                 </ul>
-                <a href="pricing.html" class="btn btn-secondary">Full plan comparison</a>
+                <a href="pricing.html" class="btn btn-secondary">Free vs Paid</a>
             </div>
         </section>
 
-        <section id="offer" class="offer-section offer-compact">
+        <section id="start" class="pilot-section pilot-compact">
             <div class="section-header">
-                <span class="badge">What you get</span>
-                <h2>Classroom tools centres use every day</h2>
-                <p>Three connected apps. Owners run the centre. Teachers log the day. Parents stay informed.</p>
-            </div>
-            <div class="offer-grid offer-grid-4">
-                <article class="offer-card">
-                    <h3>Run the centre</h3>
-                    <p>Locations, classes, rosters, and invitations — including a shared classroom tablet with PIN switch.</p>
-                </article>
-                <article class="offer-card">
-                    <h3>Capture the day</h3>
-                    <p>Check-in, meals, naps, photos, notes, and staff clock-in in a few taps.</p>
-                </article>
-                <article class="offer-card">
-                    <h3>Keep parents informed</h3>
-                    <p>Activity feed, daily reports, and bulletins on the Parent app with push alerts.</p>
-                </article>
-                <article class="offer-card">
-                    <h3>Grow into Paid</h3>
-                    <p>Vault, tuition invoices, safety logbook, policy library, and licensing export when you need them.</p>
-                </article>
-            </div>
-            <p class="section-more"><a href="product.html">Explore the full product →</a></p>
-        </section>
-
-        <section id="platform" class="platform-section apps-preview">
-            <div class="section-header">
-                <span class="badge">Download</span>
-                <h2>App Store &amp; Google Play — no hunting</h2>
-                <p>Direct links for each app. Owners start with Admin; teachers and parents join with an invitation code.</p>
-            </div>
-            <div class="platform-grid">
-                <article class="platform-card store-card" id="home-admin">
-                    <div class="platform-card-body">
-                        <div class="platform-icon admin">A</div>
-                        <h3>Admin</h3>
-                        <p>Start on Free here. Owners and directors.</p>
-                    </div>
-                    <p class="store-links store-links-stack">
-                        <a class="store-badge apple" href="https://apps.apple.com/ca/app/dailydotkids-admin/id6778867318" target="_blank" rel="noopener noreferrer"><img src="badges/app-store.svg" alt="Download on the App Store" width="135" height="40"></a>
-                        <a class="store-badge play" href="https://play.google.com/store/apps/details?id=com.anthor.dailydot.admin" target="_blank" rel="noopener noreferrer"><img src="badges/google-play.png" alt="Get it on Google Play" width="135" height="40"></a>
-                    </p>
-                </article>
-                <article class="platform-card store-card">
-                    <div class="platform-card-body">
-                        <div class="platform-icon teacher">T</div>
-                        <h3>Teacher</h3>
-                        <p>Log the classroom day. Invite from Admin.</p>
-                    </div>
-                    <p class="store-links store-links-stack">
-                        <a class="store-badge apple" href="https://apps.apple.com/ca/app/dailydotkids-teacher/id6779875014" target="_blank" rel="noopener noreferrer"><img src="badges/app-store.svg" alt="Download on the App Store" width="135" height="40"></a>
-                        <a class="store-badge play" href="https://play.google.com/store/apps/details?id=com.anthor.dailydot.teacher" target="_blank" rel="noopener noreferrer"><img src="badges/google-play.png" alt="Get it on Google Play" width="135" height="40"></a>
-                    </p>
-                </article>
-                <article class="platform-card store-card">
-                    <div class="platform-card-body">
-                        <div class="platform-icon parent">P</div>
-                        <h3>Parent</h3>
-                        <p>See the day. Invite from Admin.</p>
-                    </div>
-                    <p class="store-links store-links-stack">
-                        <a class="store-badge apple" href="https://apps.apple.com/ca/app/dailydotkids-parent/id6779875288" target="_blank" rel="noopener noreferrer"><img src="badges/app-store.svg" alt="Download on the App Store" width="135" height="40"></a>
-                        <a class="store-badge play" href="https://play.google.com/store/apps/details?id=com.anthor.dailydot.parent" target="_blank" rel="noopener noreferrer"><img src="badges/google-play.png" alt="Get it on Google Play" width="135" height="40"></a>
-                    </p>
-                </article>
-            </div>
-            <p class="section-more"><a href="apps.html">Open the full apps page →</a></p>
-        </section>
-
-        <section id="pilot" class="pilot-section pilot-compact">
-            <div class="section-header">
-                <span class="badge">Getting started</span>
-                <h2>Three steps. First class today.</h2>
+                <span class="badge">How to start</span>
+                <h2>Three steps. Same day.</h2>
             </div>
             <ol class="step-grid">
                 <li>
                     <span class="step-num">1</span>
                     <h3>Install Admin</h3>
-                    <p>Download, then tap <strong>Start on Free</strong> with your email and a password.</p>
+                    <p>Tap <strong>Start on Free</strong> — email and password, no card.</p>
                 </li>
                 <li>
                     <span class="step-num">2</span>
                     <h3>Set up the room</h3>
-                    <p>Add your location, class, and up to 8 children on Free.</p>
+                    <p>Add location and class, or try a sample classroom first.</p>
                 </li>
                 <li>
                     <span class="step-num">3</span>
                     <h3>Invite the team</h3>
-                    <p>Send codes so teachers and parents install their apps and join.</p>
+                    <p>Share codes (WhatsApp / SMS) so teachers and parents join.</p>
                 </li>
             </ol>
         </section>
 
-        <section id="day-in-life" class="compliance-section day-in-life">
+        <section id="compare" class="compliance-section">
             <div class="section-header">
-                <span class="badge">A day with DailyDotKids</span>
-                <h2>What each role does — no fictional testimonials</h2>
-                <p>Plain workflow. Your centre still runs the licence; the apps keep the day connected.</p>
+                <span class="badge">Compare</span>
+                <h2>Paper, or a platform you already know</h2>
+                <p>Busy owners only need one honest scorecard. Pick your starting point.</p>
             </div>
             <div class="compliance-grid">
                 <article class="compliance-card">
-                    <h3>Owner / Admin</h3>
-                    <p>Opens Admin, checks roster and invitations, reviews invoices on Paid, and prepares licensing visit packs when an officer is due.</p>
+                    <h3>Still on paper?</h3>
+                    <p>Binders and group texts vs Free apps for attendance, parent updates, waitlist, and calmer licensing days.</p>
+                    <p class="section-more"><a href="compare-paper.html">DailyDotKids vs paper →</a></p>
                 </article>
                 <article class="compliance-card">
-                    <h3>Teacher</h3>
-                    <p>Clocks in, logs check-in/out, meals, naps, and photos. On a shared tablet, switches with a PIN. Families see updates in Parent.</p>
-                </article>
-                <article class="compliance-card">
-                    <h3>Parent</h3>
-                    <p>Gets push for classroom activity, reads bulletins, and on Paid can mark invoice payment sent for the centre to confirm.</p>
+                    <h3>Comparing software?</h3>
+                    <p>Free-first DailyDotKids vs Lillio, Brightwheel, or Procare — Canada hosting and licensing export on Paid.</p>
+                    <p class="section-more"><a href="compare.html">See all comparisons →</a></p>
                 </article>
             </div>
-            <p class="section-more"><a href="product.html">Full product tour →</a> · <a href="parent-communication-app.html">Parent app details →</a></p>
         </section>
 
-        <section id="guides" class="resources-section">
+        <section id="compliance" class="offer-section offer-compact">
             <div class="section-header">
-                <span class="badge">Guides</span>
-                <h2>Pages built for how owners search</h2>
+                <span class="badge">Compliance</span>
+                <h2>Records that survive a licensing visit</h2>
+                <p>Free covers the classroom day. Paid adds vault, safety logbook, policy library, and visit export packs when an officer is due.</p>
             </div>
-            <ul class="resources-list">
-                <li><a href="daycare-software-canada.html">Daycare software for Canada</a></li>
-                <li><a href="daycare-software-usa.html">Daycare software for the USA</a></li>
-                <li><a href="licensing-visit-prep.html">Licensing visit prep</a></li>
-                <li><a href="parent-communication-app.html">Parent communication app</a></li>
-                <li><a href="daycare-billing.html">Billing &amp; invoice tracking</a></li>
-                <li><a href="compare.html">Compare to other platforms</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-            </ul>
-        </section>
-
-        <section id="signup" class="signup-teaser">
-            <div class="signup-teaser-inner">
-                <div>
-                    <span class="badge">Talk to us</span>
-                    <h2>Want a guided setup or Paid plan?</h2>
-                    <p>Start free anytime. Email the form if you want a pilot, NDA, or unlimited capacity.</p>
-                </div>
-                <div class="signup-teaser-actions">
-                    <a href="signup.html" class="btn btn-primary">Contact form</a>
-                    <a href="apps.html#admin-app" class="btn btn-secondary">Start free instead</a>
-                </div>
+            <div class="offer-grid offer-grid-3">
+                <article class="offer-card">
+                    <h3>Visit prep</h3>
+                    <p>Checklists and visit history so you are not pulling binders the night before.</p>
+                </article>
+                <article class="offer-card">
+                    <h3>Credentials</h3>
+                    <p>Vault with expiry reminders for staff and facility documents (Paid).</p>
+                </article>
+                <article class="offer-card">
+                    <h3>Canada data</h3>
+                    <p>Production centre data in our Canada cloud region for now — details on Security.</p>
+                </article>
             </div>
+            <p class="section-more"><a href="compliance.html">Compliance overview →</a> · <a href="licensing-visit-prep.html">Licensing visit prep →</a> · <a href="security.html">Security →</a></p>
         </section>
 
         <section id="faq" class="faq-section faq-compact">
             <div class="section-header">
-                <span class="badge">Quick answers</span>
-                <h2>Before you email</h2>
+                <span class="badge">FAQ</span>
+                <h2>Four answers most owners need</h2>
             </div>
             <div class="faq-list">
                 <details open>
                     <summary>What is DailyDotKids?</summary>
-                    <p>Daycare management software for licensed centres in Canada and the USA — Admin, Teacher, and Parent apps for attendance, classroom logs, parent updates, and staff records.</p>
+                    <p>Daycare management software for licensed centres — Admin, Teacher, and Parent apps for attendance, classroom logs, parent updates, and staff records.</p>
                 </details>
                 <details>
-                    <summary>How do I start on Free?</summary>
-                    <p>Open the <a href="apps.html#admin-app">Admin app</a> and tap <strong>Start on Free</strong>. Teachers and parents join with invitation codes you send.</p>
+                    <summary>How do I start?</summary>
+                    <p>Install the <a href="apps.html#admin-app">Admin app</a>, tap <strong>Start on Free</strong>, then invite teachers and parents with codes.</p>
                 </details>
                 <details>
-                    <summary>What is included on Free?</summary>
-                    <p>Core classroom tools with capacity limits. Compliance tools (vault, billing, safety logbook, licensing export) are on Paid. <a href="pricing.html">Compare plans</a>.</p>
+                    <summary>What is free vs paid?</summary>
+                    <p>Free = core classroom tools with published capacity. Paid = unlimited capacity plus vault, invoices, safety logbook, and licensing export. <a href="pricing.html">Compare plans</a>.</p>
                 </details>
                 <details>
-                    <summary>Where are the App Store and Google Play links?</summary>
-                    <p>On this page under <a href="#platform">Download</a>, and on the dedicated <a href="apps.html">Apps page</a>.</p>
+                    <summary>Do I need a sales call?</summary>
+                    <p>No. Start Free yourself. Contact us only if you want a guided pilot, NDA, or Paid.</p>
                 </details>
             </div>
-            <p class="section-more"><a href="faq.html">Full FAQ →</a></p>
+            <p class="section-more"><a href="faq.html">Full FAQ →</a> · <a href="signup.html">Contact / pilot →</a></p>
         </section>
 
     </main>
 
     <section class="final-cta">
         <div class="cta-content">
-            <h2>Your centre can start free today</h2>
-            <p>Free capacity: 1 location · 1 class · up to 8 students · 2 teachers · 16 parent accounts. No credit card. Centre data stored in Canada for now.</p>
+            <h2>Start free today</h2>
+            <p>No credit card. Free capacity: 1 location · 1 class · 8 students · 2 teachers · 16 parents. Data in Canada for now.</p>
             <div class="hero-stores final-stores" aria-label="Download DailyDotKids Admin">
                 <a class="store-badge apple" href="https://apps.apple.com/ca/app/dailydotkids-admin/id6778867318" target="_blank" rel="noopener noreferrer"><img src="badges/app-store.svg" alt="Download on the App Store" width="135" height="40"></a>
                 <a class="store-badge play" href="https://play.google.com/store/apps/details?id=com.anthor.dailydot.admin" target="_blank" rel="noopener noreferrer"><img src="badges/google-play.png" alt="Get it on Google Play" width="135" height="40"></a>
             </div>
-            <p class="cta-email">Pilot or Paid: <a href="signup.html">contact form</a> or <a href="mailto:hello@dailydotkids.ca" class="inquiry-ignore">hello@dailydotkids.ca</a></p>
+            <p class="cta-email">Pilot or Paid: <a href="signup.html">contact form</a> · <a href="mailto:hello@dailydotkids.ca" class="inquiry-ignore">hello@dailydotkids.ca</a></p>
         </div>
     </section>
 
@@ -486,6 +445,10 @@
         </p>
         <p>&copy; 2026 Anthor Canada corp. All rights reserved.</p>
         <p class="footer-links footer-guides">
+            <a href="compare-paper.html">vs paper</a>
+            <span>|</span>
+            <a href="compare.html">Compare</a>
+            <span>|</span>
             <a href="daycare-software-canada.html">Canada</a>
             <span>|</span>
             <a href="daycare-software-usa.html">USA</a>
@@ -496,14 +459,12 @@
             <span>|</span>
             <a href="daycare-billing.html">Billing</a>
             <span>|</span>
-            <a href="compare.html">Compare</a>
-            <span>|</span>
             <a href="llms.txt">llms.txt</a>
         </p>
         <p class="footer-links">
             <a href="/">Home</a>
             <span>|</span>
-            <a href="pricing.html">Plans</a>
+            <a href="pricing.html">Pricing</a>
             <span>|</span>
             <a href="apps.html">Apps</a>
             <span>|</span>
@@ -542,6 +503,7 @@
 
     <script src="inquiry.js?v=20260920a"></script>
     <script src="script.js?v=20260919s"></script>
+    <script src="site-nav.js?v=20260924a"></script>
     <script src="analytics.js?v=20260920a"></script>
 </body>
 </html>
