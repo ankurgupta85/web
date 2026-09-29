@@ -96,17 +96,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Shared classroom-day pulse (hero stage + how section)
     const dayBeats = [
         {
-            teacher: 'Checked in · Mia',
+            teacher: 'Checked in · Sophie',
             parent: 'Arrived · just now',
-            caption: 'Teacher checks Mia in → Parent sees arrival',
+            caption: 'Teacher checks Sophie in → Parent sees arrival',
         },
         {
-            teacher: 'Logged lunch · Mia',
+            teacher: 'Logged lunch · Sophie',
             parent: 'Lunch update · just now',
             caption: 'Teacher logs lunch → Parent gets the update',
         },
         {
-            teacher: 'Nap started · Mia',
+            teacher: 'Nap started · Sophie',
             parent: 'Nap update · just now',
             caption: 'Teacher starts nap → Parent stays informed',
         },
