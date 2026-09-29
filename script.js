@@ -93,29 +93,56 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateActiveNav, { passive: true });
     updateActiveNav();
 
-    // How-it-helps storyboard animation
-    const howStage = document.querySelector('[data-how-stage]');
-    if (howStage) {
-        const panels = Array.from(howStage.querySelectorAll('[data-how-panel]'));
-        const dots = Array.from(howStage.querySelectorAll('[data-how-dot]'));
+    // How-it-helps: teacher → parent day pulse
+    const howLive = document.querySelector('[data-how-live]');
+    if (howLive) {
+        const beats = [
+            {
+                teacher: 'Checked in · Mia',
+                parent: 'Arrived · just now',
+                caption: 'Teacher checks Mia in → Parent sees arrival',
+            },
+            {
+                teacher: 'Logged lunch · Mia',
+                parent: 'Lunch update · just now',
+                caption: 'Teacher logs lunch → Parent gets the update',
+            },
+            {
+                teacher: 'Nap started · Mia',
+                parent: 'Nap update · just now',
+                caption: 'Teacher starts nap → Parent stays informed',
+            },
+            {
+                teacher: 'Ready for pickup',
+                parent: 'Pickup ready · just now',
+                caption: 'Teacher marks pickup ready → Quieter handoff',
+            },
+        ];
+        const toastTeacher = howLive.querySelector('[data-how-toast-teacher]');
+        const toastParent = howLive.querySelector('[data-how-toast-parent]');
+        const signal = howLive.querySelector('[data-how-signal]');
+        const caption = howLive.querySelector('[data-how-caption]');
+        const buttons = Array.from(howLive.querySelectorAll('[data-how-beat]'));
         let index = 0;
         let timer = 0;
         let started = false;
 
-        const show = (next) => {
-            index = (next + panels.length) % panels.length;
-            panels.forEach((panel, i) => {
-                const on = i === index;
-                panel.classList.toggle('is-active', on);
-                panel.setAttribute('aria-hidden', on ? 'false' : 'true');
-            });
-            dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
-            // Restart role connector animation when that panel shows
-            if (index === 1) {
-                howStage.classList.remove('how-roles-run');
-                void howStage.offsetWidth;
-                howStage.classList.add('how-roles-run');
-            }
+        const playBeat = (next) => {
+            index = (next + beats.length) % beats.length;
+            const beat = beats[index];
+            buttons.forEach((btn, i) => btn.classList.toggle('is-active', i === index));
+            howLive.classList.remove('is-sending');
+            void howLive.offsetWidth;
+            if (toastTeacher) toastTeacher.textContent = beat.teacher;
+            if (toastParent) toastParent.textContent = beat.parent;
+            if (caption) caption.textContent = beat.caption;
+            howLive.classList.add('is-sending');
+            window.setTimeout(() => {
+                howLive.classList.add('is-received');
+            }, 520);
+            window.setTimeout(() => {
+                howLive.classList.remove('is-sending', 'is-received');
+            }, 2400);
         };
 
         const stop = () => {
@@ -125,19 +152,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const start = () => {
             stop();
-            timer = window.setInterval(() => show(index + 1), 3200);
+            timer = window.setInterval(() => playBeat(index + 1), 3400);
         };
 
-        dots.forEach((dot, i) => {
-            dot.style.cursor = 'pointer';
-            dot.addEventListener('click', () => {
-                show(i);
+        buttons.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                playBeat(i);
                 start();
             });
         });
 
-        howStage.addEventListener('mouseenter', stop);
-        howStage.addEventListener('mouseleave', () => {
+        howLive.addEventListener('mouseenter', stop);
+        howLive.addEventListener('mouseleave', () => {
             if (started) start();
         });
 
@@ -146,21 +172,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting && !started) {
                         started = true;
-                        howStage.classList.add('is-visible');
-                        show(0);
+                        howLive.classList.add('is-visible');
+                        playBeat(0);
                         start();
                     }
-                    if (!entry.isIntersecting && started) {
-                        stop();
-                    } else if (entry.isIntersecting && started && !timer) {
-                        start();
-                    }
+                    if (!entry.isIntersecting && started) stop();
+                    else if (entry.isIntersecting && started && !timer) start();
                 });
             },
             { threshold: 0.35 },
         );
-        io.observe(howStage);
-        panels.forEach((panel, i) => panel.setAttribute('aria-hidden', i === 0 ? 'false' : 'true'));
+        io.observe(howLive);
+        if (signal) signal.setAttribute('aria-hidden', 'true');
     }
 
     const walkthrough = document.querySelector('[data-hero-walkthrough]');
