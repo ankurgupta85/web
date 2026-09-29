@@ -2880,6 +2880,30 @@ body.nav-open::before {
     gap: 0.55rem 1.5rem;
 }
 
+.company-proof {
+    max-width: 720px;
+    margin: 1.15rem auto 0;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--gray);
+}
+
+.company-proof strong {
+    color: var(--ink);
+    font-weight: 700;
+}
+
+.company-proof a {
+    color: var(--ink);
+    font-weight: 650;
+    text-decoration: underline;
+    text-decoration-color: rgba(226, 75, 82, 0.4);
+    text-underline-offset: 3px;
+    white-space: nowrap;
+}
+
 .trust-bar li {
     position: relative;
     padding-left: 1.05rem;
