@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
     const sections = document.querySelectorAll('section[id]');
 
-    const navHeight = () => navbar.offsetHeight;
+    const navHeight = () => (navbar ? navbar.offsetHeight : 0);
 
     function hashFromHref(href) {
         if (!href) return '';
@@ -13,26 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
         return href.slice(hashIndex);
     }
 
+    // Mobile drawer lives in site-nav.js only — do not bind a second toggle here.
     function closeMobileNav() {
+        if (window.SiteLayout?.navApi?.closeMobileNav) {
+            window.SiteLayout.navApi.closeMobileNav();
+            return;
+        }
+        if (!navLinks || !navToggle) return;
         navLinks.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
         document.body.classList.remove('nav-open');
     }
-
-    function openMobileNav() {
-        navLinks.classList.add('open');
-        navToggle.setAttribute('aria-expanded', 'true');
-        document.body.classList.add('nav-open');
-    }
-
-    if (navToggle) navToggle.addEventListener('click', () => {
-        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-        if (isOpen) {
-            closeMobileNav();
-        } else {
-            openMobileNav();
-        }
-    });
 
     document.querySelectorAll('a[href*="#"]').forEach((link) => {
         link.addEventListener('click', (e) => {
@@ -55,16 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             history.replaceState(null, '', hash);
         });
-    });
-
-    document.addEventListener('click', (e) => {
-        if (
-            navLinks.classList.contains('open') &&
-            !navLinks.contains(e.target) &&
-            !navToggle.contains(e.target)
-        ) {
-            closeMobileNav();
-        }
     });
 
     window.addEventListener('resize', () => {

@@ -4037,23 +4037,28 @@ body[data-page="home"] .faq-compact .faq-list {
 @media (max-width: 1100px) {
     .nav-toggle {
         display: flex;
+        position: relative;
+        z-index: 1003;
     }
 
     .nav-links {
         position: fixed;
         top: 0;
         right: 0;
-        width: min(280px, 80vw);
+        width: min(300px, 86vw);
         height: 100vh;
+        height: 100dvh;
         background-color: var(--white);
         flex-direction: column;
         align-items: flex-start;
         padding: 90px 28px 28px;
-        gap: 20px;
+        gap: 18px;
         box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
         transform: translateX(100%);
         transition: transform 0.3s ease;
-        z-index: 1000;
+        z-index: 1002;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-links.open {
@@ -4095,6 +4100,8 @@ body[data-page="home"] .faq-compact .faq-list {
 
     .nav-links .nav-cta {
         margin-top: 10px;
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -4411,33 +4418,52 @@ body[data-page="home"] .faq-compact .faq-list {
     }
 
     .hero-stage-visual {
-        padding: 1rem 0.65rem 0.95rem;
+        padding: 1.1rem 0.85rem 1rem;
         border-radius: 20px;
     }
 
+    /* One readable phone frame on small screens — not three squeezed chips */
     .hero-trio {
-        min-height: 250px;
-        gap: 0.3rem 0.4rem;
-        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 0;
+        max-width: min(78vw, 280px);
+        margin: 0 auto;
+        gap: 0;
     }
 
-    .hero-trio-phone {
-        max-width: 142px;
+    .hero-trio-admin,
+    .hero-trio-parent,
+    .hero-trio-signal {
+        display: none;
+    }
+
+    .hero-trio-phone,
+    .hero-trio-teacher {
+        width: 100%;
+        max-width: min(78vw, 280px);
     }
 
     .hero-trio-shell {
-        border-width: 5px;
-        border-radius: 18px;
+        width: 100%;
+        max-width: min(78vw, 280px);
+        border-width: 8px;
+        border-radius: 28px;
+        box-shadow:
+            0 8px 0 #0f141c,
+            0 22px 44px rgba(26, 35, 50, 0.22);
     }
 
-    .hero-trio-signal {
-        width: 28px;
-        margin-bottom: 1.8rem;
+    .hero-trio-shell img {
+        object-fit: cover;
+        object-position: top center;
     }
 
     .hero-trio-toast {
-        font-size: 0.6rem;
-        padding: 0.32rem 0.38rem;
+        font-size: 0.68rem;
+        padding: 0.4rem 0.5rem;
+        max-width: 92%;
     }
 
     .hero-stage-caption {
@@ -4701,6 +4727,26 @@ body[data-page="home"] .faq-compact .faq-list {
 
 .product-card:hover .product-card-shot img {
     transform: scale(1.03);
+}
+
+@media (max-width: 992px) {
+    .product-proof .product-card {
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .product-card-shot {
+        aspect-ratio: 9 / 16;
+        max-width: 240px;
+        margin: 1rem auto 0;
+        border-radius: 22px;
+        border: 7px solid #1a2332;
+        box-shadow:
+            0 6px 0 #0f141c,
+            0 18px 36px rgba(26, 35, 50, 0.18);
+        border-bottom: 7px solid #1a2332;
+    }
 }
 
 .product-card h3,

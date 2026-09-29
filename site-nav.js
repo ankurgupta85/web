@@ -17,7 +17,8 @@
     document.body.classList.toggle('nav-open', open);
   }
 
-  toggle.addEventListener('click', function () {
+  toggle.addEventListener('click', function (event) {
+    event.stopPropagation();
     setDrawerOpen(toggle.getAttribute('aria-expanded') !== 'true');
   });
 
@@ -36,6 +37,10 @@
     link.addEventListener('click', function () {
       if (isDrawer()) setDrawerOpen(false);
     });
+  });
+
+  window.addEventListener('resize', function () {
+    if (!isDrawer()) setDrawerOpen(false);
   });
 
   // Expose close for inquiry modal / other overlays
