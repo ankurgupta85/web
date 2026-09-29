@@ -2904,6 +2904,81 @@ body.nav-open::before {
     white-space: nowrap;
 }
 
+.hero-pain {
+    margin: 0 0 0.85rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    max-width: 34rem;
+}
+
+.hero-stage .hero-pain {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.proof-strip {
+    max-width: 1100px;
+    margin: 1.25rem auto 0.25rem;
+    padding: 0 20px;
+}
+
+.proof-strip-inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.proof-strip article {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1rem 1.1rem 1.05rem;
+}
+
+.proof-strip h3 {
+    margin: 0 0 0.35rem;
+    font-size: 0.98rem;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+.proof-strip p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--gray);
+    line-height: 1.45;
+}
+
+.more-links {
+    margin: 2rem auto 0.5rem;
+    text-align: center;
+    font-size: 0.92rem;
+    color: var(--gray);
+}
+
+.more-links a {
+    color: var(--ink);
+    font-weight: 650;
+    text-decoration: underline;
+    text-decoration-color: rgba(226, 75, 82, 0.35);
+    text-underline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .proof-strip-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-stage .hero-content h1 {
+        font-size: clamp(1.7rem, 1.35rem + 3.2vw, 2.35rem);
+    }
+
+    .hero-pain {
+        font-size: 0.98rem;
+    }
+}
+
 .trust-bar li {
     position: relative;
     padding-left: 1.05rem;
@@ -3713,7 +3788,7 @@ body[data-page="home"] .faq-compact .faq-list {
     margin-bottom: 0.85rem;
 }
 
-.hero-home .hero-content > p:not(.hero-brand):not(.hero-store-label):not(.hero-store-hint) {
+.hero-home .hero-content > p:not(.hero-brand):not(.hero-store-label):not(.hero-store-hint):not(.hero-pain):not(.hero-try-note) {
     font-size: 1.12rem;
     line-height: 1.55;
     max-width: 34rem;
