@@ -166,7 +166,7 @@
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="style.css?v=20260928x">
+    <link rel="stylesheet" href="style.css?v=20260928y">
     <script>
       /* Preserve old deep links that moved off the homepage */
       (function () {
@@ -221,9 +221,9 @@
         </div>
     </nav>
 
-    <header class="hero hero-home hero-freemium">
+    <header class="hero hero-home hero-freemium hero-stage">
         <div class="hero-atmosphere" aria-hidden="true"></div>
-        <div class="hero-inner">
+        <div class="hero-stage-inner">
             <div class="hero-content">
                 <p class="hero-brand" aria-label="DailyDotKids">Daily<span>DotKids</span></p>
                 <h1>Daycare apps that quiet the day</h1>
@@ -235,40 +235,37 @@
                 </div>
                 <p class="hero-store-hint"><a href="#how">See how it helps</a> · <a href="pricing.html">Free vs Paid</a></p>
             </div>
-            <div class="hero-visual">
-                <div class="hero-demo">
-                    <div class="hero-phone-frame hero-video-frame" data-hero-video-frame hidden>
-                        <video
-                            class="hero-video"
-                            poster="screenshots/admin/students.webp"
-                            muted
-                            loop
-                            playsinline
-                            autoplay
-                            preload="metadata"
-                        >
-                            <source src="videos/start-on-free.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <p class="hero-phone-label" data-video-caption hidden>Start on Free → log in → choose teacher devices</p>
-                    <div class="hero-walkthrough" data-hero-walkthrough>
-                        <div class="hero-phone-frame" aria-live="polite">
-                            <img class="hero-slide is-active" src="screenshots/admin/students.webp" alt="Admin roster — set up the centre" width="900" height="1957">
-                            <img class="hero-slide" src="teacher/students.webp" alt="Teacher class roster — log meals, naps, and check-in" width="900" height="1957" loading="lazy">
-                            <img class="hero-slide" src="parent/activities.webp" alt="Parent activity feed — families see the day" width="900" height="1957" loading="lazy">
+
+            <div class="hero-stage-visual" data-hero-stage aria-label="Admin, Teacher, and Parent apps">
+                <div class="hero-trio" aria-hidden="true">
+                    <figure class="hero-trio-phone hero-trio-admin">
+                        <div class="hero-trio-shell">
+                            <img src="screenshots/admin/students.webp" alt="" width="450" height="978">
                         </div>
-                        <p class="hero-phone-label" data-slide-caption>Admin — set up the centre</p>
-                        <div class="hero-slide-dots" role="tablist" aria-label="How DailyDotKids helps">
-                            <button type="button" class="is-active" aria-label="Admin sets up the centre"></button>
-                            <button type="button" aria-label="Teacher logs the day"></button>
-                            <button type="button" aria-label="Parent sees updates"></button>
+                        <figcaption>Admin</figcaption>
+                    </figure>
+                    <figure class="hero-trio-phone hero-trio-teacher">
+                        <div class="hero-trio-shell">
+                            <img src="teacher/students.webp" alt="" width="450" height="978">
+                            <div class="hero-trio-toast hero-trio-toast-teacher" data-hero-toast-teacher>Logged lunch · Mia</div>
                         </div>
-                        <p class="hero-flow-hint" aria-hidden="true">
-                            <span>Admin</span><span class="hero-flow-arrow">→</span>
-                            <span>Teacher</span><span class="hero-flow-arrow">→</span>
-                            <span>Parent</span>
-                        </p>
-                    </div>
+                        <figcaption>Teacher</figcaption>
+                    </figure>
+                    <div class="hero-trio-signal" data-hero-signal><span></span></div>
+                    <figure class="hero-trio-phone hero-trio-parent">
+                        <div class="hero-trio-shell">
+                            <img src="parent/activities.webp" alt="" width="450" height="978">
+                            <div class="hero-trio-toast hero-trio-toast-parent" data-hero-toast-parent>Lunch update · just now</div>
+                        </div>
+                        <figcaption>Parent</figcaption>
+                    </figure>
+                </div>
+                <p class="hero-stage-caption" data-hero-caption>Teacher logs lunch → Parent gets the update</p>
+                <div class="hero-stage-beats" role="tablist" aria-label="Classroom day moments">
+                    <button type="button" class="is-active" data-hero-beat="0">Check-in</button>
+                    <button type="button" data-hero-beat="1">Meal</button>
+                    <button type="button" data-hero-beat="2">Nap</button>
+                    <button type="button" data-hero-beat="3">Pickup</button>
                 </div>
             </div>
         </div>
@@ -558,7 +555,7 @@
     </div>
 
     <script src="inquiry.js?v=20260920a"></script>
-    <script src="script.js?v=20260928x"></script>
+    <script src="script.js?v=20260928y"></script>
     <script src="site-nav.js?v=20260924d"></script>
     <script src="analytics.js?v=20260927a"></script>
 </body>

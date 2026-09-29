@@ -93,56 +93,58 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateActiveNav, { passive: true });
     updateActiveNav();
 
-    // How-it-helps: teacher → parent day pulse
-    const howLive = document.querySelector('[data-how-live]');
-    if (howLive) {
-        const beats = [
-            {
-                teacher: 'Checked in · Mia',
-                parent: 'Arrived · just now',
-                caption: 'Teacher checks Mia in → Parent sees arrival',
-            },
-            {
-                teacher: 'Logged lunch · Mia',
-                parent: 'Lunch update · just now',
-                caption: 'Teacher logs lunch → Parent gets the update',
-            },
-            {
-                teacher: 'Nap started · Mia',
-                parent: 'Nap update · just now',
-                caption: 'Teacher starts nap → Parent stays informed',
-            },
-            {
-                teacher: 'Ready for pickup',
-                parent: 'Pickup ready · just now',
-                caption: 'Teacher marks pickup ready → Quieter handoff',
-            },
-        ];
-        const toastTeacher = howLive.querySelector('[data-how-toast-teacher]');
-        const toastParent = howLive.querySelector('[data-how-toast-parent]');
-        const signal = howLive.querySelector('[data-how-signal]');
-        const caption = howLive.querySelector('[data-how-caption]');
-        const buttons = Array.from(howLive.querySelectorAll('[data-how-beat]'));
+    // Shared classroom-day pulse (hero stage + how section)
+    const dayBeats = [
+        {
+            teacher: 'Checked in · Mia',
+            parent: 'Arrived · just now',
+            caption: 'Teacher checks Mia in → Parent sees arrival',
+        },
+        {
+            teacher: 'Logged lunch · Mia',
+            parent: 'Lunch update · just now',
+            caption: 'Teacher logs lunch → Parent gets the update',
+        },
+        {
+            teacher: 'Nap started · Mia',
+            parent: 'Nap update · just now',
+            caption: 'Teacher starts nap → Parent stays informed',
+        },
+        {
+            teacher: 'Ready for pickup',
+            parent: 'Pickup ready · just now',
+            caption: 'Teacher marks pickup ready → Quieter handoff',
+        },
+    ];
+
+    function initDayPulse(root, {
+        toastTeacherSel,
+        toastParentSel,
+        captionSel,
+        beatSel,
+        startOnView = true,
+    }) {
+        if (!root) return;
+        const toastTeacher = root.querySelector(toastTeacherSel);
+        const toastParent = root.querySelector(toastParentSel);
+        const caption = captionSel ? root.querySelector(captionSel) : null;
+        const buttons = Array.from(root.querySelectorAll(beatSel));
         let index = 0;
         let timer = 0;
         let started = false;
 
         const playBeat = (next) => {
-            index = (next + beats.length) % beats.length;
-            const beat = beats[index];
+            index = (next + dayBeats.length) % dayBeats.length;
+            const beat = dayBeats[index];
             buttons.forEach((btn, i) => btn.classList.toggle('is-active', i === index));
-            howLive.classList.remove('is-sending');
-            void howLive.offsetWidth;
+            root.classList.remove('is-sending', 'is-received');
+            void root.offsetWidth;
             if (toastTeacher) toastTeacher.textContent = beat.teacher;
             if (toastParent) toastParent.textContent = beat.parent;
             if (caption) caption.textContent = beat.caption;
-            howLive.classList.add('is-sending');
-            window.setTimeout(() => {
-                howLive.classList.add('is-received');
-            }, 520);
-            window.setTimeout(() => {
-                howLive.classList.remove('is-sending', 'is-received');
-            }, 2400);
+            root.classList.add('is-sending');
+            window.setTimeout(() => root.classList.add('is-received'), 520);
+            window.setTimeout(() => root.classList.remove('is-sending', 'is-received'), 2400);
         };
 
         const stop = () => {
@@ -162,29 +164,51 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        howLive.addEventListener('mouseenter', stop);
-        howLive.addEventListener('mouseleave', () => {
+        root.addEventListener('mouseenter', stop);
+        root.addEventListener('mouseleave', () => {
             if (started) start();
         });
 
-        const io = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting && !started) {
-                        started = true;
-                        howLive.classList.add('is-visible');
-                        playBeat(0);
-                        start();
-                    }
-                    if (!entry.isIntersecting && started) stop();
-                    else if (entry.isIntersecting && started && !timer) start();
-                });
-            },
-            { threshold: 0.35 },
-        );
-        io.observe(howLive);
-        if (signal) signal.setAttribute('aria-hidden', 'true');
+        if (startOnView) {
+            const io = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting && !started) {
+                            started = true;
+                            root.classList.add('is-visible');
+                            playBeat(0);
+                            start();
+                        }
+                        if (!entry.isIntersecting && started) stop();
+                        else if (entry.isIntersecting && started && !timer) start();
+                    });
+                },
+                { threshold: 0.28 },
+            );
+            io.observe(root);
+        } else {
+            started = true;
+            root.classList.add('is-visible');
+            playBeat(0);
+            start();
+        }
     }
+
+    initDayPulse(document.querySelector('[data-hero-stage]'), {
+        toastTeacherSel: '[data-hero-toast-teacher]',
+        toastParentSel: '[data-hero-toast-parent]',
+        captionSel: '[data-hero-caption]',
+        beatSel: '[data-hero-beat]',
+        startOnView: true,
+    });
+
+    initDayPulse(document.querySelector('[data-how-live]'), {
+        toastTeacherSel: '[data-how-toast-teacher]',
+        toastParentSel: '[data-how-toast-parent]',
+        captionSel: '[data-how-caption]',
+        beatSel: '[data-how-beat]',
+        startOnView: true,
+    });
 
     const walkthrough = document.querySelector('[data-hero-walkthrough]');
     const heroVideo = document.querySelector('.hero-video');
