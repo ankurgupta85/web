@@ -2817,6 +2817,22 @@ body.nav-open::before {
     color: var(--gray);
 }
 
+.hero-try-note {
+    margin: 0.85rem 0 0;
+    font-size: 0.92rem;
+    font-weight: 650;
+    color: var(--ink);
+}
+
+.start-cta {
+    margin-top: 1.75rem;
+    text-align: center;
+}
+
+.start-cta .hero-stores {
+    justify-content: center;
+}
+
 .hero-store-hint a {
     color: var(--ink);
     font-weight: 650;
