@@ -26,9 +26,13 @@
             location,
             children: formData.get('children') || '',
             message: formData.get('message') || '',
+            requestNdaDpa: formData.get('requestNdaDpa') === 'yes' ? 'yes' : '',
             acceptedTerms: formData.get('acceptedTerms') === 'yes' ? 'yes' : '',
             termsVersion: '2026-08',
-            _subject: 'DailyDotKids pilot inquiry',
+            _subject:
+                formData.get('requestNdaDpa') === 'yes'
+                    ? 'DailyDotKids pilot inquiry — NDA/DPA requested'
+                    : 'DailyDotKids pilot inquiry',
         };
     }
 
@@ -142,7 +146,7 @@
         <button type="button" class="inquiry-close" aria-label="Close form">&times;</button>
         <div id="inquiry-form-view">
             <h2 id="inquiry-title">Contact us about a pilot</h2>
-            <p class="inquiry-lead">Licensed centres in Canada and the USA. Send the form and we will email you to discuss a structured pilot or guided setup. Production data is stored in Canada.</p>
+            <p class="inquiry-lead">Licensed centres in Canada and the USA. Send the form and we will email you about a pilot or guided setup. Need an NDA or DPA first? Check the box below. Production data is stored in Canada.</p>
             <form class="inquiry-form" id="inquiry-form" novalidate>
                 <div class="inquiry-field">
                     <label for="inquiry-name">Name</label>
@@ -241,6 +245,12 @@
                 <div class="inquiry-field">
                     <label for="inquiry-message">Message</label>
                     <textarea id="inquiry-message" name="message" rows="4" placeholder="Optional — how you run today, or what you need to see."></textarea>
+                </div>
+                <div class="terms-consent">
+                    <label class="terms-consent-label">
+                        <input id="inquiry-nda" name="requestNdaDpa" type="checkbox" value="yes">
+                        <span>Please send an NDA and Data Processing Addendum before we go further.</span>
+                    </label>
                 </div>
                 <input class="inquiry-honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="terms-consent">
