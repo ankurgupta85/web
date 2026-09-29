@@ -145,10 +145,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        root.addEventListener('mouseenter', stop);
-        root.addEventListener('mouseleave', () => {
-            if (started) start();
-        });
+        // Pause on hover only for mouse — touch hover would freeze the pulse on phones.
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            root.addEventListener('mouseenter', stop);
+            root.addEventListener('mouseleave', () => {
+                if (started) start();
+            });
+        }
 
         if (startOnView) {
             const io = new IntersectionObserver(
@@ -164,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         else if (entry.isIntersecting && started && !timer) start();
                     });
                 },
-                { threshold: 0.28 },
+                { threshold: 0.18, rootMargin: '0px 0px -8% 0px' },
             );
             io.observe(root);
         } else {
