@@ -96,8 +96,54 @@
         bindStoreBadges();
         bindSignupForms();
         bindStartFreeCtas();
+        postFirstPartyPageView();
         global.DDK = global.DDK || {};
         global.DDK.track = track;
+    }
+
+    function sessionId() {
+        try {
+            var key = 'ddk_sid';
+            var existing = global.sessionStorage && global.sessionStorage.getItem(key);
+            if (existing) return existing;
+            var id = 's' + Math.random().toString(36).slice(2) + Date.now().toString(36);
+            if (global.sessionStorage) global.sessionStorage.setItem(key, id);
+            return id;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function apiBase() {
+        // Prefer override; fall back to App Engine prod (same host as mobile apps).
+        return global.DDK_API_BASE || 'https://dailydot-prod.nn.r.appspot.com';
+    }
+
+    function postFirstPartyPageView() {
+        try {
+            var params = new URLSearchParams(global.location.search || '');
+            var body = {
+                path: global.location.pathname + (global.location.search || ''),
+                referrer: document.referrer || '',
+                utmSource: params.get('utm_source') || params.get('src') || '',
+                utmMedium: params.get('utm_medium') || '',
+                utmCampaign: params.get('utm_campaign') || '',
+                eventName: 'page_view',
+                sessionId: sessionId(),
+            };
+            // fire-and-forget; never block the page
+            if (global.fetch) {
+                global.fetch(apiBase() + '/api/public/website-page-view', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body),
+                    keepalive: true,
+                    mode: 'cors',
+                }).catch(function () {});
+            }
+        } catch (e) {
+            // ignore
+        }
     }
 
     if (document.readyState === 'loading') {

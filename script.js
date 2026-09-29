@@ -93,6 +93,76 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateActiveNav, { passive: true });
     updateActiveNav();
 
+    // How-it-helps storyboard animation
+    const howStage = document.querySelector('[data-how-stage]');
+    if (howStage) {
+        const panels = Array.from(howStage.querySelectorAll('[data-how-panel]'));
+        const dots = Array.from(howStage.querySelectorAll('[data-how-dot]'));
+        let index = 0;
+        let timer = 0;
+        let started = false;
+
+        const show = (next) => {
+            index = (next + panels.length) % panels.length;
+            panels.forEach((panel, i) => {
+                const on = i === index;
+                panel.classList.toggle('is-active', on);
+                panel.setAttribute('aria-hidden', on ? 'false' : 'true');
+            });
+            dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+            // Restart role connector animation when that panel shows
+            if (index === 1) {
+                howStage.classList.remove('how-roles-run');
+                void howStage.offsetWidth;
+                howStage.classList.add('how-roles-run');
+            }
+        };
+
+        const stop = () => {
+            window.clearInterval(timer);
+            timer = 0;
+        };
+
+        const start = () => {
+            stop();
+            timer = window.setInterval(() => show(index + 1), 3200);
+        };
+
+        dots.forEach((dot, i) => {
+            dot.style.cursor = 'pointer';
+            dot.addEventListener('click', () => {
+                show(i);
+                start();
+            });
+        });
+
+        howStage.addEventListener('mouseenter', stop);
+        howStage.addEventListener('mouseleave', () => {
+            if (started) start();
+        });
+
+        const io = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !started) {
+                        started = true;
+                        howStage.classList.add('is-visible');
+                        show(0);
+                        start();
+                    }
+                    if (!entry.isIntersecting && started) {
+                        stop();
+                    } else if (entry.isIntersecting && started && !timer) {
+                        start();
+                    }
+                });
+            },
+            { threshold: 0.35 },
+        );
+        io.observe(howStage);
+        panels.forEach((panel, i) => panel.setAttribute('aria-hidden', i === 0 ? 'false' : 'true'));
+    }
+
     const walkthrough = document.querySelector('[data-hero-walkthrough]');
     const heroVideo = document.querySelector('.hero-video');
     if (walkthrough) {
@@ -101,8 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const caption = walkthrough.querySelector('[data-slide-caption]');
         const captions = [
             'Admin — set up the centre',
-            'Teacher — log the day in a few taps',
-            'Parent — families see updates',
+            'Teacher — log meals, naps, check-in',
+            'Parent — families see the day',
         ];
         let index = 0;
         let timer = 0;
