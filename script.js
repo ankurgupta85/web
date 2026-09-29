@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             teacher: 'Ready for pickup',
             parent: 'Pickup ready · just now',
-            caption: 'Teacher marks pickup ready → Quieter handoff',
+            caption: 'Teacher marks pickup ready → Parent sees pickup status',
         },
     ];
 
