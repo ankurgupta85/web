@@ -2880,28 +2880,32 @@ body.nav-open::before {
     gap: 0.55rem 1.5rem;
 }
 
-.company-proof {
-    max-width: 720px;
-    margin: 1.15rem auto 0;
-    padding: 0 20px;
-    text-align: center;
-    font-size: 0.95rem;
-    line-height: 1.55;
-    color: var(--gray);
+.freemium-strip-simple {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem 1.25rem;
+    align-items: center;
 }
 
-.company-proof strong {
-    color: var(--ink);
-    font-weight: 700;
+.freemium-strip-simple .freemium-upgrade {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 0.9rem;
 }
 
-.company-proof a {
-    color: var(--ink);
-    font-weight: 650;
-    text-decoration: underline;
-    text-decoration-color: rgba(226, 75, 82, 0.4);
-    text-underline-offset: 3px;
-    white-space: nowrap;
+.freemium-strip-simple h2 {
+    margin: 0 0 0.35rem;
+}
+
+.freemium-strip-simple p {
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .freemium-strip-simple {
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
 }
 
 .hero-pain {
@@ -3897,7 +3901,7 @@ body[data-page="home"] .faq-compact .faq-list {
     text-align: center;
 }
 
-.hero-stage .hero-content > p:not(.hero-brand):not(.hero-store-label):not(.hero-store-hint) {
+.hero-stage .hero-content > p:not(.hero-brand):not(.hero-store-label):not(.hero-store-hint):not(.hero-pain):not(.hero-try-note):not(.hero-lead) {
     margin-left: auto;
     margin-right: auto;
 }
