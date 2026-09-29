@@ -202,14 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
         startOnView: true,
     });
 
-    initDayPulse(document.querySelector('[data-how-live]'), {
-        toastTeacherSel: '[data-how-toast-teacher]',
-        toastParentSel: '[data-how-toast-parent]',
-        captionSel: '[data-how-caption]',
-        beatSel: '[data-how-beat]',
-        startOnView: true,
-    });
-
     const walkthrough = document.querySelector('[data-hero-walkthrough]');
     const heroVideo = document.querySelector('.hero-video');
     if (walkthrough) {
