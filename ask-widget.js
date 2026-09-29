@@ -20,7 +20,7 @@
         },
         {
             q: 'Where is data stored?',
-            a: 'Production centre data is stored in Canada (Google Cloud Montréal) for now. Built by Anthor Canada corp in Langley, BC.',
+            a: 'Production centre data is stored in Canada (Google Cloud Montréal). Built by Anthor Canada corp in Langley, BC.',
         },
     ];
 

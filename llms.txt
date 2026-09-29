@@ -1,7 +1,7 @@
 # DailyDotKids
 
 > Daycare management software for licensed childcare centres in Canada and the USA.
-> Product of Anthor Canada corp (Langley, British Columbia). Centre data hosted in Google Cloud Canada (Montréal) for now.
+> Product of Anthor Canada corp (Langley, British Columbia). Centre data hosted in Google Cloud Canada (Montréal).
 
 ## Product
 - Three apps: Admin (owners/directors), Teacher (educators), Parent (families)
